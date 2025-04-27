@@ -1,4 +1,4 @@
-#python clipto512.py --input ./image --output ./tiled_photos
+#python train.py --input ./image --output ./tiled_photos
 from ultralytics import YOLO
 from ultralytics import RTDETR
 
@@ -6,8 +6,8 @@ from ultralytics import RTDETR
 
 if __name__ == '__main__':
     # 加载模型
-    model = YOLO(r'ultralytics/cfg/models/11/yolo11.yaml')  # 不使用预训练权重训练
-    # model = YOLO(r'yolov8.yaml').load("yolov8n.pt")  # 使用预训练权重训练
+    # model = YOLO(r'ultralytics/cfg/models/11/yolo11.yaml')  # 不使用预训练权重训练
+    model = YOLO(r'yolov11.yaml').load("yolov11n.pt")  # 使用预训练权重训练
     # 训练参数 ----------------------------------------------------------------------------------------------
     model.train(
         data=r'D:/Bob/PyProject/ultralytics-8.3.58/data.yaml',
@@ -18,7 +18,7 @@ if __name__ == '__main__':
         save=True,  # (bool) 保存训练检查点和预测结果
         save_period=-1,  # (int) 每x周期保存检查点（如果小于1则禁用）
         cache=False,  # (bool) True/ram、磁盘或False。使用缓存加载数据
-        device='',  # (int | str | list, optional) 运行的设备，例如 cuda device=0 或 device=0,1,2,3 或 device=cpu
+        device='1',  # (int | str | list, optional) 运行的设备，例如 cuda device=0 或 device=0,1,2,3 或 device=cpu
         workers=8,  # (int) 数据加载的工作线程数（每个DDP进程）
         project='runs/train',  # (str, optional) 项目名称
         name='exp',  # (str, optional) 实验名称，结果保存在'project/name'目录下
