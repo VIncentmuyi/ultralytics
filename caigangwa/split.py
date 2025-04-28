@@ -62,7 +62,7 @@ def split_data(file_path, label_path, new_file_path, train_rate, val_rate, test_
 
 
 if __name__ == '__main__':
-    file_path = r"D:\Bob\yolo\train\data\JPEGImages"  # 图片文件夹
-    label_path = r'D:\Bob\yolo\train\data\labels'  # 标签文件夹
-    new_file_path = r"D:\Bob\yolo\train\VOCdevkit"  # 新数据存放位置
+    file_path = r"D:\Y.work\code\data\changsha\crops\images"  # 图片文件夹
+    label_path = r'D:\Y.work\code\data\changsha\crops\labels'  # 标签文件夹
+    new_file_path = r"D:\Y.work\code\data\changsha\data"  # 新数据存放位置
     split_data(file_path, label_path, new_file_path, train_rate=0.8, val_rate=0.1, test_rate=0.1)
